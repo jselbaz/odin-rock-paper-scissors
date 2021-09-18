@@ -38,7 +38,6 @@ function computerPlay () {
 function playRound() {
 	let humanTurn = humanPlay();
 	let computerTurn = computerPlay();
-	console.log(computerTurn);
 	switch(humanTurn) {
 		case "Rock":
 			if (computerTurn === "Scissors") {
@@ -77,68 +76,21 @@ function playRound() {
 			}
 			break;
 	}
-	console.log(winner);
 	return winner
 }
 
 function game() {
 	humanScore = 0;
 	computerScore = 0;
-	winner = playRound();
-	if (winner === "You") {
-			humanScore += 1;
-		} else if (winner === "Computer") {
-			computerScore += 1;
-		}
-	console.log(winner);
-	winner = playRound();
-	if (winner === "You") {
-			humanScore += 1;
-		} else if (winner === "Computer") {
-			computerScore += 1;
-		}
-	winner = playRound();
-	if (winner === "You") {
-			humanScore += 1;
-		} else if (winner === "Computer") {
-			computerScore += 1;
-		}
-	winner = playRound();
-	if (winner === "You") {
-			humanScore += 1;
-		} else if (winner === "Computer") {
-			computerScore += 1;
-		}
-	winner = playRound();
-	if (winner === "You") {
-			humanScore += 1;
-		} else if (winner === "Computer") {
-			computerScore += 1;
-		}
-	console.log(`Final Score is you: ${humanScore} to computer: ${computerScore}`);
-	if (humanScore > computerScore) {
-		console.log("You win the game!");
-	} else if (humanScore < computerScore) {
-		console.log("Computer wins the game!")
-	} else {
-		console.log("It's a tie!")
-	}
-}
-
-/*
-function game() {
-	humanScore = 0;
-	computerScore = 0;
-	for (let i = 0; i++; i<5) {
+	for (let i = 0; i<5; i++) {
 		winner = playRound();
 		if (winner === "You") {
 			humanScore += 1;
 		} else if (winner === "Computer") {
 			computerScore += 1;
 		}
-	console.log(winner);
 	}
-	console.log(`Final Score is you: ${humanScore} to computer: ${computerScore}`);
+	console.log(`Final Score is you: ${humanScore} to computer: ${computerScore} with ${5 - humanScore - computerScore} draws`);
 	if (humanScore > computerScore) {
 		console.log("You win the game!");
 	} else if (humanScore < computerScore) {
@@ -147,4 +99,3 @@ function game() {
 		console.log("It's a tie!")
 	}
 }
-*/
