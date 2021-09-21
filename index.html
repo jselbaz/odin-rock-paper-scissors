@@ -10,10 +10,26 @@
 </head>
 
 <body>
-  <div class='buttons'>
-  <button id="rock">Rock</button>
-  <button id="paper">Paper</button>
-  <button id="scissors">Scissors</button>
+  <h1 class="header">Rock, Paper, Scissors</h1>
+  <div class="score">
+  <div class="player-score"></div>
+  <div>-</div>
+  <div class="computer-score"></div>
+  </div>
+  <div class="round-summary"></div>
+  <div class="icon-container">
+  <div class="icon">
+  <div class="card"><img id="rock" src="images/rock.png"></div>
+  <div class="card-text"><p>Rock</p></div>
+  </div>
+  <div class="icon">
+  <div class="card"><img id="paper" src="images/paper.png"></div>
+  <div class="card-text"><p>Paper</p></div>
+  </div>
+  <div class="icon">
+  <div class="card"><img id="scissors" src="images/scissors.png"></div>
+  <div class="card-text"><p>Scissors</p></div>
+  </div>
   </div>
   <div id="results"></div>
   <script src="scripts.js"></script>

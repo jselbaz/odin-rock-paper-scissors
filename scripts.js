@@ -2,15 +2,16 @@ let humanScore = 0;
 let computerScore = 0;
 let draws = 0;
 const results = document.querySelector('#results');
-const buttons = document.querySelectorAll('button');
-
+const buttons = document.querySelectorAll('img');
+const pScore = document.querySelector(".player-score");
+const cScore = document.querySelector(".computer-score");
+const summary = document.querySelector("#results");
 
 function createLog(text) {
 	const p = document.createElement('p');
 	p.textContent = text;
 	return p;
 }
-	
 
 function computerPlay() {
 	options = ['Rock', 'Paper', 'Scissors']
@@ -72,6 +73,8 @@ function playRound(playerChoice) {
 	};
 
 function playGame(input) {
+	pScore.textContent = humanScore;
+	cScore.textContent = computerScore;
 	computerTurn = computerPlay();
 	playerTurnResult = playRound(input);
 	logData = createLog(playerTurnResult)
