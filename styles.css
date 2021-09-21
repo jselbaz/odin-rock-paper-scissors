@@ -1,5 +1,5 @@
 body {
-	background-color: gray;
+	background-color: #30323D;
 	display: flex;
 	flex-direction: column;
 }
@@ -12,20 +12,20 @@ p {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	color: orange;
+	color: #CDD1C4;
 }
 
 .score {
 	display: flex;
 	justify-content: center;
 	font-size: 20px;
-	color: orange;
+	color: #30323D;
 }
 
 .icon-container {
 	display: flex;
 	justify-content: center;
-	color: orange;
+	color: #5C80BC;
 	font-size: 26px;
 }
 
@@ -38,20 +38,20 @@ p {
 
 img {
 	display: flex;
-	border: 1px solid yellow;
-	background-color: gray;
+	border: 3px solid #5C80BC;
+	background-color: #CDD1C4;
 	height: 250px;
 	width: 250px;
 	border-radius: 25px;
 	margin: 25px;
 }
 
-#results {
+#results, #final-score {
 	display: flex;
 	flex-direction: column;
 	font-size: 20px;
-	color: orange;
 	justify-content: center;
 	align-items: center;
 	margin-bottom: 0px;
+	color: #E8C547;
 }

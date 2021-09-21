@@ -2,10 +2,11 @@ let humanScore = 0;
 let computerScore = 0;
 let draws = 0;
 const results = document.querySelector('#results');
+const gameSummary = document.querySelector('#final-score');
 const buttons = document.querySelectorAll('img');
 const pScore = document.querySelector(".player-score");
 const cScore = document.querySelector(".computer-score");
-const summary = document.querySelector("#results");
+addButtonFunction();
 
 function createLog(text) {
 	const p = document.createElement('p');
@@ -17,10 +18,32 @@ function computerPlay() {
 	options = ['Rock', 'Paper', 'Scissors']
 	return options[Math.floor(Math.random() * options.length)]};
 
+/*
 buttons.forEach(button => {
 	button.addEventListener('click', () => {
 		playGame(button.id);
 })});
+*/
+
+function addButtonFunction() {
+	buttons.forEach(button => {
+	button.addEventListener('click', () => {
+		playGame(button.id);
+})})};
+
+/*
+function removeButtons() {
+	buttons.forEach(button => {
+	button.removeEventListener('click', () => {
+		playGame(button.id);
+})})}
+*/
+
+function clearLog(elementId) {
+	let div = document.getElementById("results");
+	while (div.firstChild) {
+		div.removeChild(div.firstChild)
+}};
 
 function playRound(playerChoice) {
 	let log = "";
@@ -43,30 +66,30 @@ function playRound(playerChoice) {
 		if (computerTurn === "Rock") {
 			winner = "You";
 			humanScore++;
-			log = ("You win! Your Paper beats their Rock!");
+			log = "You win! Your Paper beats their Rock!";
 		} else if (computerTurn === "Scissors") {
 			winner = "Computer";
 			computerScore++;
-			log = ("You lose! Their Scissors beats your Paper!");
+			log = "You lose! Their Scissors beats your Paper!";
 		} else if (computerTurn === "Paper") {
 			winner = "Draw";
 			draws++;
-			log = ("Its a draw! You both picked Paper!");
+			log = "Its a draw! You both picked Paper!";
 		}
 		}
 	else if (playerChoice === "scissors") {
 		if (computerTurn === "Paper") {
 			winner = "You";
 			humanScore++;
-			log = ("You win! Your Scissors beats their Paper!");
+			log = "You win! Your Scissors beats their Paper!";
 		} else if (computerTurn === "Rock") {
 			winner = "Computer";
 			computerScore++;
-			log = ("You lose! Their Rock beats your Scissors!");
+			log = "You lose! Their Rock beats your Scissors!";
 		} else if (computerTurn === "Scissors") {
 			winner = "Draw";
 			draws++;
-			log = ("Its a draw! You both picked Scissors!");
+			log = "Its a draw! You both picked Scissors!";
 		}
 	}
 	return log;
@@ -80,8 +103,13 @@ function playGame(input) {
 	logData = createLog(playerTurnResult)
 	results.appendChild(logData);
 	if (humanScore === 5 || computerScore === 5) {
+		clearLog("results");
 		finalScore = (`Final Score is you: ${humanScore} to computer: ${computerScore} with ${draws} draws`);
 		logData = createLog(finalScore)
-		results.appendChild(logData);
-	}
-}
+		gameSummary.appendChild(logData);
+		humanScore = 0;
+		computerScore = 0;
+		draws = 0;
+		pScore.textContent = humanScore;
+		cScore.textContent = computerScore;
+}};
