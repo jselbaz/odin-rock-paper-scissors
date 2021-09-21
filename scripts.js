@@ -55,14 +55,14 @@ function playRound(playerChoice) {
 		}
 	else if (playerChoice === "scissors") {
 		if (computerTurn === "Paper") {
-			var winner = "You";
+			winner = "You";
 			humanScore++;
 			log = ("You win! Your Scissors beats their Paper!");
 		} else if (computerTurn === "Rock") {
 			winner = "Computer";
 			computerScore++;
 			log = ("You lose! Their Rock beats your Scissors!");
-		} else if (computerTurn === "Paper") {
+		} else if (computerTurn === "Scissors") {
 			winner = "Draw";
 			draws++;
 			log = ("Its a draw! You both picked Scissors!");
